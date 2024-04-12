@@ -1,9 +1,15 @@
 <script setup>
 import q from "../src/data/quizzes.json";
-import { ref } from "vue";
+import { ref, watch } from "vue";
 
 const quizzes = ref(q);
 const search = ref("");
+
+watch(search, () => {
+  quizzes.value = q.filter((quiz) => {
+    return quiz.name.toLowerCase().includes(search.value.toLowerCase());
+  });
+});
 </script>
 
 <template>
