@@ -1,5 +1,5 @@
 <script setup>
-import q from "../src/data/quizzes.json";
+import q from "./data/quizzes.json";
 import { ref, watch } from "vue";
 
 const quizzes = ref(q);
